@@ -157,7 +157,7 @@
 </ol>
 <h3 id="zsteg-png-amp-bmp"><a href="#zsteg-png-amp-bmp" class="headerlink" title="zsteg (png&bmp)"></a>zsteg (png&bmp)</h3><p>用于检查是否有 LSB 隐写。</p>
 <p>先进入 zsteg 所在目录，</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zsteg xxx.png/bmp <span class="comment">#检查是否有LSB隐写</span></span><br><span class="line">zsteg xxx.png/bmp -a <span class="comment">#尝试所有已知的组合</span></span><br><span class="line">zsteg xxx.png/bmp -v <span class="comment">#显示细节</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zsteg xxx.png/bmp <span class="comment">#检查是否有LSB隐写</span></span><br><span class="line">zsteg xxx.png/bmp -a <span class="comment">#尝试所有已知的组合</span></span><br><span class="line">zsteg xxx.png/bmp -v <span class="comment">#显示细节</span></span><br><span class="line">zsteg -E <span class="string">"[隐写方法]"</span> xxx.png/bmp > out.txt <span class="comment">#提取文件</span></span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="stegdetect-jpg"><a href="#stegdetect-jpg" class="headerlink" title="stegdetect (jpg)"></a>stegdetect (jpg)</h3><p>用于检测 jpg 文件加密方式，包括：</p>
 <ol>
