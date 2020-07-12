@@ -203,14 +203,20 @@
 <figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java <span class="literal">-jar</span> ZipCenOp.jar r xxx.zip <span class="comment">#解除伪加密</span></span><br><span class="line">java <span class="literal">-jar</span> ZipCenOp.jar e xxx.zip <span class="comment">#加上伪加密</span></span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="7z"><a href="#7z" class="headerlink" title="7z"></a>7z</h3><p>Ubuntu自带，可以解压vmdk文件。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7z x [文件名] <span class="comment">#解压文件s</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7z x [文件名] <span class="comment">#解压文件</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="tar-gz"><a href="#tar-gz" class="headerlink" title="tar.gz"></a>tar.gz</h3><p>Ubuntu自带，可以解压tar.gz文件</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf xxx.tar.gz <span class="comment">#解压文件</span></span><br></pre></td></tr></tbody></table></figure>
 
 <h2 id="音频工具"><a href="#音频工具" class="headerlink" title="音频工具"></a>音频工具</h2><h3 id="Audacity"><a href="#Audacity" class="headerlink" title="Audacity"></a>Audacity</h3><p>观察音频的波形、频谱图。</p>
 <h3 id="MP3Stego-mp3"><a href="#MP3Stego-mp3" class="headerlink" title="MP3Stego (mp3)"></a>MP3Stego (mp3)</h3><p>首先进入 MP3Stego 所在目录，</p>
 <figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./Decode.exe <span class="literal">-X</span> <span class="literal">-p</span> [密码] xxx.mp3 <span class="comment">#解密</span></span><br><span class="line">./Encode.exe <span class="literal">-E</span> [要隐藏的文件] <span class="literal">-P</span> pass xxx.wav out.mp3 <span class="comment">#加密</span></span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="steghide"><a href="#steghide" class="headerlink" title="steghide"></a>steghide</h3><p> 与上方图片工具中steghide用法相同。<a href="#jump">点此跳转</a></p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="WinHex"><a href="#WinHex" class="headerlink" title="WinHex"></a>WinHex</h3><h3 id="Silent-Eye"><a href="#Silent-Eye" class="headerlink" title="Silent Eye"></a>Silent Eye</h3>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="uncompyle6"><a href="#uncompyle6" class="headerlink" title="uncompyle6"></a>uncompyle6</h3><p>反编译pyc文件。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uncompyle6 xxx.pyc > xxx.py <span class="comment">#反编译</span></span><br><span class="line">uncompile -o . *.pyc <span class="comment">##将当前目录中所有的pyc文件反编译成pyc_dis源文件</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="WinHex"><a href="#WinHex" class="headerlink" title="WinHex"></a>WinHex</h3><h3 id="Silent-Eye"><a href="#Silent-Eye" class="headerlink" title="Silent Eye"></a>Silent Eye</h3><h3 id="NTFS-Streams-Editor"><a href="#NTFS-Streams-Editor" class="headerlink" title="NTFS Streams Editor"></a>NTFS Streams Editor</h3>
                 </article>
                 <ul class="tags-postTags">
                     
@@ -225,6 +231,10 @@
 
     
     <nav id="gobottom" class="pagination">
+        
+        <a class="prev-post" title="Misc思路总结" href="/2020/07/13/Misc%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/">
+            ← Misc思路总结
+        </a>
         
         <span class="prev-next-post">·</span>
         
@@ -255,7 +265,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#检测-amp-分离工具"><span class="toc-text">检测&分离工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#binwalk"><span class="toc-text">binwalk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#foremost"><span class="toc-text">foremost</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片工具"><span class="toc-text">图片工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stegsolve"><span class="toc-text">stegsolve</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zsteg-png-amp-bmp"><span class="toc-text">zsteg (png&bmp)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pngcheck-png"><span class="toc-text">pngcheck (png)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tweakPNG-png"><span class="toc-text">tweakPNG (png)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#steghide-jpg-amp-bmp"><span class="toc-text">steghide (jpg&bmp) </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stegdetect-jpg"><span class="toc-text">stegdetect (jpg)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#outguess-jpg"><span class="toc-text">outguess (jpg)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#f5-steganography-jpg"><span class="toc-text">f5-steganography (jpg)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gaps-jpg"><span class="toc-text">gaps (jpg)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#QR-Research"><span class="toc-text">QR Research</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐形水印工具"><span class="toc-text">隐形水印工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#压缩包工具"><span class="toc-text">压缩包工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Advanced-Archive-Password-Recovery"><span class="toc-text">Advanced Archive Password Recovery</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ZipCenOp-zip"><span class="toc-text">ZipCenOp (zip)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7z"><span class="toc-text">7z</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#音频工具"><span class="toc-text">音频工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Audacity"><span class="toc-text">Audacity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MP3Stego-mp3"><span class="toc-text">MP3Stego (mp3)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#steghide"><span class="toc-text">steghide</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WinHex"><span class="toc-text">WinHex</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Silent-Eye"><span class="toc-text">Silent Eye</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#检测-amp-分离工具"><span class="toc-text">检测&分离工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#binwalk"><span class="toc-text">binwalk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#foremost"><span class="toc-text">foremost</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片工具"><span class="toc-text">图片工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stegsolve"><span class="toc-text">stegsolve</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zsteg-png-amp-bmp"><span class="toc-text">zsteg (png&bmp)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pngcheck-png"><span class="toc-text">pngcheck (png)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tweakPNG-png"><span class="toc-text">tweakPNG (png)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#steghide-jpg-amp-bmp"><span class="toc-text">steghide (jpg&bmp) </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stegdetect-jpg"><span class="toc-text">stegdetect (jpg)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#outguess-jpg"><span class="toc-text">outguess (jpg)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#f5-steganography-jpg"><span class="toc-text">f5-steganography (jpg)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gaps-jpg"><span class="toc-text">gaps (jpg)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#QR-Research"><span class="toc-text">QR Research</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐形水印工具"><span class="toc-text">隐形水印工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#压缩包工具"><span class="toc-text">压缩包工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Advanced-Archive-Password-Recovery"><span class="toc-text">Advanced Archive Password Recovery</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ZipCenOp-zip"><span class="toc-text">ZipCenOp (zip)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7z"><span class="toc-text">7z</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tar-gz"><span class="toc-text">tar.gz</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#音频工具"><span class="toc-text">音频工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Audacity"><span class="toc-text">Audacity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MP3Stego-mp3"><span class="toc-text">MP3Stego (mp3)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#steghide"><span class="toc-text">steghide</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#uncompyle6"><span class="toc-text">uncompyle6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WinHex"><span class="toc-text">WinHex</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Silent-Eye"><span class="toc-text">Silent Eye</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NTFS-Streams-Editor"><span class="toc-text">NTFS Streams Editor</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -341,7 +351,7 @@
             
             
 
-<article class="read-next-card" style="background-image: url(https://s1.ax1x.com/2020/06/28/NcgcqI.jpg)">
+<article class="read-next-card" style="background-image: url(https://s1.ax1x.com/2020/07/13/UGdLvj.png)">
   <header class="read-next-card-header">
     <small class="read-next-card-header-sitetitle">— john_doe's Blog —</small>
     <h3 class="read-next-card-header-title">最新文章</h3>
@@ -353,6 +363,12 @@
   </div>
   <div class="read-next-card-content">
     <ul>
+      
+      
+      
+      <li>
+        <a href="/2020/07/13/Misc%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/">Misc思路总结</a>
+      </li>
       
       
       
@@ -383,12 +399,12 @@
             
             
 
-<article class="read-next-card" style="background-image: url(https://s1.ax1x.com/2020/06/28/NcgcqI.jpg)">
+<article class="read-next-card" style="background-image: url(https://s1.ax1x.com/2020/07/13/UGdLvj.png)">
 	<header class="read-next-card-header tagcloud-card">
 		<h3 class="read-next-card-header-title">标签云</h3>
 	</header>
 	<div class="read-next-card-content-ext">
-		<a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Misc/" style="font-size: 14px;">Misc</a>
+		<a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Misc/" style="font-size: 24px;">Misc</a>
 	</div>
 </article>
 
