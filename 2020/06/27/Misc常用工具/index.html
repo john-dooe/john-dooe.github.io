@@ -140,14 +140,14 @@
         </header>
         <div class="post-full ">
             
-            <figure class="post-full-image" style="background-image: url(https://s1.ax1x.com/2020/06/28/NcgDRe.jpg)">
+            <figure class="post-full-image" style="background-image: url(https://s1.ax1x.com/2020/07/14/UatoBd.jpg)">
             </figure>
             
             <div class="post-full-content">
                 <article id="photoswipe" class="markdown-body">
-                    <h2 id="检测-amp-分离工具"><a href="#检测-amp-分离工具" class="headerlink" title="检测&分离工具"></a>检测&分离工具</h2><h3 id="binwalk"><a href="#binwalk" class="headerlink" title="binwalk"></a>binwalk</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">binwalk [文件名] <span class="comment">#扫描文件中是否有隐藏文件</span></span><br><span class="line">binwalk -e [文件名] <span class="comment">#将其中文件分离</span></span><br></pre></td></tr></tbody></table></figure>
+                    <h2 id="检测-amp-分离工具"><a href="#检测-amp-分离工具" class="headerlink" title="检测&分离工具"></a>检测&分离工具</h2><h3 id="binwalk"><a href="#binwalk" class="headerlink" title="binwalk"></a>binwalk</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">binwalk [文件名]  <span class="comment">#扫描文件中是否有隐藏文件</span></span><br><span class="line">binwalk -e [文件名]  <span class="comment">#将其中文件分离</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="foremost"><a href="#foremost" class="headerlink" title="foremost"></a>foremost</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foremost [文件名] <span class="comment">#将其中文件分离</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="foremost"><a href="#foremost" class="headerlink" title="foremost"></a>foremost</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foremost [文件名]  <span class="comment">#将其中文件分离</span></span><br></pre></td></tr></tbody></table></figure>
 
 <h2 id="图片工具"><a href="#图片工具" class="headerlink" title="图片工具"></a>图片工具</h2><h3 id="stegsolve"><a href="#stegsolve" class="headerlink" title="stegsolve"></a>stegsolve</h3><ol>
 <li><p>切换通道，观察是否有异常。如果在某个通道图片有异常则可能是 LSB 隐写</p>
@@ -156,14 +156,14 @@
 </li>
 </ol>
 <h3 id="zsteg-png-amp-bmp"><a href="#zsteg-png-amp-bmp" class="headerlink" title="zsteg (png&bmp)"></a>zsteg (png&bmp)</h3><p>用于检查是否有 LSB 隐写</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zsteg xxx.png/bmp <span class="comment">#检查是否有LSB隐写</span></span><br><span class="line">zsteg xxx.png/bmp -a <span class="comment">#尝试所有已知的组合</span></span><br><span class="line">zsteg xxx.png/bmp -v <span class="comment">#显示细节</span></span><br><span class="line">zsteg -E <span class="string">"[隐写方法]"</span> xxx.png/bmp > out.txt <span class="comment">#提取文件</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zsteg xxx.png/bmp  <span class="comment">#检查是否有LSB隐写</span></span><br><span class="line">zsteg xxx.png/bmp -a  <span class="comment">#尝试所有已知的组合</span></span><br><span class="line">zsteg xxx.png/bmp -v  <span class="comment">#显示细节</span></span><br><span class="line">zsteg -E <span class="string">"[隐写方法]"</span> xxx.png/bmp > out.txt  <span class="comment">#提取文件</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="pngcheck-png"><a href="#pngcheck-png" class="headerlink" title="pngcheck (png)"></a>pngcheck (png)</h3><p>判断是否为CRC校验码错误，如果错误说明图片高度或宽度被修改</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pngcheck xxx.png <span class="comment">#检查CRC</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="pngcheck-png"><a href="#pngcheck-png" class="headerlink" title="pngcheck (png)"></a>pngcheck (png)</h3><p>判断是否为 CRC 校验码错误，如果错误说明图片高度或宽度被修改</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pngcheck xxx.png  <span class="comment">#检查CRC</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="tweakPNG-png"><a href="#tweakPNG-png" class="headerlink" title="tweakPNG (png)"></a>tweakPNG (png)</h3><p>可以检查CRC校验码，并可以修改图片的宽和高</p>
+<h3 id="tweakPNG-png"><a href="#tweakPNG-png" class="headerlink" title="tweakPNG (png)"></a>tweakPNG (png)</h3><p>可以检查 CRC 校验码，并可以修改图片的宽和高</p>
 <h3 id="steghide-jpg-amp-bmp"><a href="#steghide-jpg-amp-bmp" class="headerlink" title="steghide (jpg&bmp) "></a>steghide (jpg&bmp) <span id="jump"></span></h3><p>一个可以将文件隐藏到图片或音频中的工具</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">steghide info xxx.jpg <span class="comment">#查看图片中嵌入的文件信息</span></span><br><span class="line">steghide extract -sf xxx.jpg <span class="comment">#提取隐藏文件</span></span><br><span class="line">steghide embed -cf [文件载体] -ef [待隐藏文件] <span class="comment">#将文件隐藏进载体</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">steghide info xxx.jpg  <span class="comment">#查看图片中嵌入的文件信息</span></span><br><span class="line">steghide extract -sf xxx.jpg  <span class="comment">#提取隐藏文件</span></span><br><span class="line">steghide embed -cf [文件载体] -ef [待隐藏文件]  <span class="comment">#将文件隐藏进载体</span></span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="stegdetect-jpg"><a href="#stegdetect-jpg" class="headerlink" title="stegdetect (jpg)"></a>stegdetect (jpg)</h3><p>用于检测 jpg 文件加密方式，包括：</p>
 <ol>
@@ -178,27 +178,27 @@
 </ol>
 <p>对应 j、o、p、i</p>
 <p>首先进入 stegdetect 所在目录，</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./stegdetect.exe <span class="literal">-tjopi</span> <span class="literal">-s</span> <span class="number">10.0</span> xxx.jpg <span class="comment">#检测该图片用的是哪种加密</span></span><br><span class="line">./stegbreak.exe <span class="literal">-r</span> rules.ini <span class="operator">-f</span> password.txt <span class="literal">-t</span> p xxx.jpg <span class="comment">#若是jphide可用字典破解密码</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./stegdetect.exe <span class="literal">-tjopi</span> <span class="literal">-s</span> <span class="number">10.0</span> xxx.jpg  <span class="comment">#检测该图片用的是哪种加密</span></span><br><span class="line">./stegbreak.exe <span class="literal">-r</span> rules.ini <span class="operator">-f</span> password.txt <span class="literal">-t</span> p xxx.jpg  <span class="comment">#若是jphide可用字典破解密码</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="outguess-jpg"><a href="#outguess-jpg" class="headerlink" title="outguess (jpg)"></a>outguess (jpg)</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">outguess -k [密码] -r xxx.jpg out.txt <span class="comment">#解密</span></span><br><span class="line">outguess -k [密码] -d [要隐藏的文件] xxx.jpg yyy.jpg <span class="comment">#加密，xxx.jpg会覆盖yyy.jpg</span></span><br><span class="line"><span class="comment">#密码可有可无</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="outguess-jpg"><a href="#outguess-jpg" class="headerlink" title="outguess (jpg)"></a>outguess (jpg)</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">outguess -k [密码] -r xxx.jpg out.txt  <span class="comment">#解密</span></span><br><span class="line">outguess -k [密码] -d [要隐藏的文件] xxx.jpg yyy.jpg  <span class="comment">#加密，xxx.jpg会覆盖yyy.jpg</span></span><br><span class="line"><span class="comment">#密码可有可无</span></span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="f5-steganography-jpg-amp-gif"><a href="#f5-steganography-jpg-amp-gif" class="headerlink" title="f5-steganography (jpg&gif)"></a>f5-steganography (jpg&gif)</h3><p>首先进入 f5-steganography 所在目录，</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java Extract xxx.jpg <span class="literal">-p</span> [密码] <span class="comment">#解密</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java Extract xxx.jpg <span class="literal">-p</span> [密码]  <span class="comment">#解密</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="gnuplot"><a href="#gnuplot" class="headerlink" title="gnuplot"></a>gnuplot</h3><p>一个命令行的交互式绘图工具。我主要用来把存有像素点坐标的txt文件转化为图像</p>
-<p>格式要求：每个坐标占一行，x轴的值与y轴的值中间由空格分开</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gnuplot <span class="comment"># 启动gnuplot</span></span><br><span class="line">plot pixel.txt <span class="comment"># 生成图像</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="gnuplot"><a href="#gnuplot" class="headerlink" title="gnuplot"></a>gnuplot</h3><p>一个命令行的交互式绘图工具。我主要用来把存有像素点坐标的 txt 文件转化为图像</p>
+<p>格式要求：每个坐标占一行，x 轴的值与 y 轴的值中间由空格分开</p>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gnuplot  <span class="comment"># 启动gnuplot</span></span><br><span class="line">plot pixel.txt  <span class="comment"># 生成图像</span></span><br></pre></td></tr></tbody></table></figure>
 
 <p>也可以用来画函数图像</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot sin(x) <span class="comment"># 画一个正弦图像</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot sin(x)  <span class="comment"># 画一个正弦图像</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="gaps-jpg"><a href="#gaps-jpg" class="headerlink" title="gaps (jpg)"></a>gaps (jpg)</h3><p>拼图软件。如何安装与使用详见 <a href="https://www.zhuanzhi.ai/document/282c8a2293a31361d4c15b4451b5406a " target="_blank">gaps 教程</a> </p>
+<h3 id="gaps-jpg"><a href="#gaps-jpg" class="headerlink" title="gaps (jpg)"></a>gaps (jpg)</h3><p>拼图软件。如何安装与使用详见 <a href="https://www.zhuanzhi.ai/document/282c8a2293a31361d4c15b4451b5406a " target="_blank">gaps 教程</a></p>
 <ol>
 <li><p>构建拼图</p>
- <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create_puzzle images/xxx.jpg --size=[每个拼图块的边长像素数] --destination=puzzle.jpg</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create_puzzle images/xxx.jpg --size=[每个拼图块的边长像素数] --destination=puzzle.jpg</span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>解决拼图</p>
- <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gaps --image=puzzle.jpg --generations=[遗传代数] --population=[拼图个数] --size=[每个拼图块的边长像素数] --save</span><br><span class="line"><span class="comment">#不写size参数也可以</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gaps --image=puzzle.jpg --generations=[遗传代数] --population=[拼图个数] --size=[每个拼图块的边长像素数] --save</span><br><span class="line"> <span class="comment">#不写size参数也可以</span></span><br></pre></td></tr></tbody></table></figure>
 
 </li>
 </ol>
@@ -207,21 +207,21 @@
 <h2 id="压缩包工具"><a href="#压缩包工具" class="headerlink" title="压缩包工具"></a>压缩包工具</h2><h3 id="Advanced-Archive-Password-Recovery"><a href="#Advanced-Archive-Password-Recovery" class="headerlink" title="Advanced Archive Password Recovery"></a>Advanced Archive Password Recovery</h3><p>破解 rar、zip 压缩包的密码</p>
 <h3 id="ZipCenOp-zip"><a href="#ZipCenOp-zip" class="headerlink" title="ZipCenOp (zip)"></a>ZipCenOp (zip)</h3><p>用于解除伪加密，但无法检测是否为伪加密</p>
 <p>首先进入 ZipCenOp 所在目录，</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java <span class="literal">-jar</span> ZipCenOp.jar r xxx.zip <span class="comment">#解除伪加密</span></span><br><span class="line">java <span class="literal">-jar</span> ZipCenOp.jar e xxx.zip <span class="comment">#加上伪加密</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java <span class="literal">-jar</span> ZipCenOp.jar r xxx.zip  <span class="comment">#解除伪加密</span></span><br><span class="line">java <span class="literal">-jar</span> ZipCenOp.jar e xxx.zip  <span class="comment">#加上伪加密</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="7z"><a href="#7z" class="headerlink" title="7z"></a>7z</h3><p>Ubuntu自带，可以解压vmdk文件</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7z x [文件名] <span class="comment">#解压文件</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="7z"><a href="#7z" class="headerlink" title="7z"></a>7z</h3><p>Ubuntu 自带，可以解压 vmdk 文件</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7z x [文件名]  <span class="comment">#解压文件</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="tar-gz"><a href="#tar-gz" class="headerlink" title="tar.gz"></a>tar.gz</h3><p>Ubuntu自带，可以解压tar.gz文件</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf xxx.tar.gz <span class="comment">#解压文件</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="tar-gz"><a href="#tar-gz" class="headerlink" title="tar.gz"></a>tar.gz</h3><p>Ubuntu 自带，可以解压 tar.gz 文件</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf xxx.tar.gz  <span class="comment">#解压文件</span></span><br></pre></td></tr></tbody></table></figure>
 
 <h2 id="音频工具"><a href="#音频工具" class="headerlink" title="音频工具"></a>音频工具</h2><h3 id="Audacity"><a href="#Audacity" class="headerlink" title="Audacity"></a>Audacity</h3><p>观察音频的波形、频谱图</p>
 <h3 id="MP3Stego-mp3"><a href="#MP3Stego-mp3" class="headerlink" title="MP3Stego (mp3)"></a>MP3Stego (mp3)</h3><p>首先进入 MP3Stego 所在目录，</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./Decode.exe <span class="literal">-X</span> <span class="literal">-p</span> [密码] xxx.mp3 <span class="comment">#解密</span></span><br><span class="line">./Encode.exe <span class="literal">-E</span> [要隐藏的文件] <span class="literal">-P</span> pass xxx.wav out.mp3 <span class="comment">#加密</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./Decode.exe <span class="literal">-X</span> <span class="literal">-p</span> [密码] xxx.mp3  <span class="comment">#解密</span></span><br><span class="line">./Encode.exe <span class="literal">-E</span> [要隐藏的文件] <span class="literal">-P</span> pass xxx.wav out.mp3  <span class="comment">#加密</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="steghide"><a href="#steghide" class="headerlink" title="steghide"></a>steghide</h3><p> 与上方图片工具中steghide用法相同，<a href="#jump">点此跳转</a></p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="uncompyle6"><a href="#uncompyle6" class="headerlink" title="uncompyle6"></a>uncompyle6</h3><p>反编译pyc文件</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uncompyle6 xxx.pyc > xxx.py <span class="comment">#反编译</span></span><br><span class="line">uncompile -o . *.pyc <span class="comment">##将当前目录中所有的pyc文件反编译成pyc_dis源文件</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="steghide"><a href="#steghide" class="headerlink" title="steghide"></a>steghide</h3><p>与上方图片工具中 steghide 用法相同，<a href="#jump">点此跳转</a></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="uncompyle6"><a href="#uncompyle6" class="headerlink" title="uncompyle6"></a>uncompyle6</h3><p>反编译 pyc 文件</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uncompyle6 xxx.pyc > xxx.py  <span class="comment">#反编译</span></span><br><span class="line">uncompile -o . *.pyc  <span class="comment">#将当前目录中所有的pyc文件反编译成pyc_dis源文件</span></span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="010-Editor"><a href="#010-Editor" class="headerlink" title="010 Editor"></a>010 Editor</h3><h3 id="WinHex"><a href="#WinHex" class="headerlink" title="WinHex"></a>WinHex</h3><h3 id="Silent-Eye"><a href="#Silent-Eye" class="headerlink" title="Silent Eye"></a>Silent Eye</h3><h3 id="NTFS-Streams-Editor"><a href="#NTFS-Streams-Editor" class="headerlink" title="NTFS Streams Editor"></a>NTFS Streams Editor</h3>
                 </article>
@@ -229,6 +229,10 @@
                     
                     <li>
                         <a href="/tags/Misc/" rel="tag"># Misc</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag"># 工具</a>
                     </li>
                     
                 </ul>
@@ -374,6 +378,12 @@
       
       
       <li>
+        <a href="/2020/07/14/Shell%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/">Shell命令笔记</a>
+      </li>
+      
+      
+      
+      <li>
         <a href="/2020/07/13/Misc%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/">Misc思路总结</a>
       </li>
       
@@ -384,10 +394,6 @@
       </li>
       
       
-      
-      <li>
-        <a href="/2020/06/27/hello-world/">Hello World</a>
-      </li>
       
       
     </ul>
@@ -411,7 +417,7 @@
 		<h3 class="read-next-card-header-title">标签云</h3>
 	</header>
 	<div class="read-next-card-content-ext">
-		<a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Misc/" style="font-size: 24px;">Misc</a>
+		<a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Misc/" style="font-size: 24px;">Misc</a> <a href="/tags/Shell/" style="font-size: 14px;">Shell</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 14px;">工具</a>
 	</div>
 </article>
 
