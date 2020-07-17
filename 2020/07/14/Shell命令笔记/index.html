@@ -183,22 +183,14 @@
 
 <h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><h4 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h4><ul>
 <li><p>编码</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">base64 [文件名]  <span class="comment">#将文件中内容编码</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">base64 [文件名]  <span class="comment">#将文件中内容编码</span></span><br><span class="line">base64 文件1 > 文件2  <span class="comment">#将文件1中内容编码，保存进文件2</span></span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>解码</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">base64 -d [文件名]  <span class="comment">#将文件中内容解码</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">base64 -d [文件名]  <span class="comment">#将文件中内容解码</span></span><br><span class="line">base64 -d 文件1 > 文件2  <span class="comment">#将文件1中内容解码，保存进文件2</span></span><br></pre></td></tr></tbody></table></figure>
 
 </li>
 </ul>
-<h4 id="base58"><a href="#base58" class="headerlink" title="base58"></a>base58</h4><ul>
-<li><p>编码</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">base58 [文件名]  <span class="comment">#将文件中内容编码</span></span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>解码</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">base58 -d [文件名]  <span class="comment">#将文件中内容解码</span></span><br></pre></td></tr></tbody></table></figure>
-
-</li>
-</ul>
+<h4 id="base58"><a href="#base58" class="headerlink" title="base58"></a>base58</h4><p>同上</p>
 <h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><h4 id="7z"><a href="#7z" class="headerlink" title="7z"></a>7z</h4><p>可以解压 vmdk 文件</p>
 <ul>
 <li><p>压缩</p>

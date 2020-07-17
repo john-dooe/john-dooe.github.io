@@ -149,12 +149,42 @@
 
 <h3 id="foremost"><a href="#foremost" class="headerlink" title="foremost"></a>foremost</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foremost [文件名]  <span class="comment">#将其中文件分离</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="图片工具"><a href="#图片工具" class="headerlink" title="图片工具"></a>图片工具</h2><h3 id="stegsolve"><a href="#stegsolve" class="headerlink" title="stegsolve"></a>stegsolve</h3><ol>
+<h2 id="图片工具"><a href="#图片工具" class="headerlink" title="图片工具"></a>图片工具</h2><h3 id="stegsolve"><a href="#stegsolve" class="headerlink" title="stegsolve"></a>stegsolve</h3><ul>
 <li><p>切换通道，观察是否有异常。如果在某个通道图片有异常则可能是 LSB 隐写</p>
 </li>
-<li><p>可以逐帧观察 gif 动图</p>
+<li><p>可以逐帧观察、保存 gif 动图</p>
 </li>
-</ol>
+</ul>
+<h3 id="ImageMagick"><a href="#ImageMagick" class="headerlink" title="ImageMagick"></a>ImageMagick</h3><ul>
+<li><p>convert 命令</p>
+<ul>
+<li><p>转换图像格式</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">convert xxx.jpg xxx.png  <span class="comment">#把jpg文件转成png文件</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>改变图像大小、旋转图像</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">convert -resize 1024x768 xxx.jpg yyy.jpg  <span class="comment">#将图像分辨率改为1024*768</span></span><br><span class="line">convert -sample 50%x50% xxx.jpg yyy.jpg  <span class="comment">#将图像的缩减为原来的 50%*50%</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>在图像里面添加文字</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">convert -fill black -pointsize 60 -font helvetica -draw <span class="string">"text 10,80 'Hello, World!'"</span> xxx.jpg yyy.jpg</span><br><span class="line"><span class="comment">#在图片的(10,80)位置用60磅的黑色Helvetica字体写上Hello, World!</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+</li>
+<li><p>identify 命令</p>
+<ul>
+<li><p>查看图片的信息</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">identify xxx.jpg  <span class="comment">#查看简略信息</span></span><br><span class="line">identify -verbose xxx.jpg  <span class="comment">#查看详细信息</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>分析 gif 每一帧的时间间隔</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">identify -format <span class="string">"%s %T\n"</span> xxx.gif  <span class="comment">#加上行号</span></span><br><span class="line">identify -format <span class="string">"%T\n"</span> xxx.gif  <span class="comment">#不加行号</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+</li>
+<li><p>montage 命令</p>
+<p>图片拼接命令</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">montage *.jpg -tile axb -geometry mxn+x+y out.jpg</span><br><span class="line"><span class="comment">#将目录中jpg文件按顺序拼为横向a块纵向b块，每个图块为mxn像素，边框为横向x像素纵向y像素，输出为out.jpg</span></span><br></pre></td></tr></tbody></table></figure>
+
+</li>
+</ul>
 <h3 id="zsteg-png-amp-bmp"><a href="#zsteg-png-amp-bmp" class="headerlink" title="zsteg (png&bmp)"></a>zsteg (png&bmp)</h3><p>用于检查是否有 LSB 隐写</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zsteg xxx.png/bmp  <span class="comment">#检查是否有LSB隐写</span></span><br><span class="line">zsteg xxx.png/bmp -a  <span class="comment">#尝试所有已知的组合</span></span><br><span class="line">zsteg xxx.png/bmp -v  <span class="comment">#显示细节</span></span><br><span class="line">zsteg -E <span class="string">"[隐写方法]"</span> xxx.png/bmp > out.txt  <span class="comment">#提取文件</span></span><br></pre></td></tr></tbody></table></figure>
 
@@ -184,9 +214,17 @@
 
 <h3 id="f5-steganography-jpg-amp-gif"><a href="#f5-steganography-jpg-amp-gif" class="headerlink" title="f5-steganography (jpg&gif)"></a>f5-steganography (jpg&gif)</h3><p>首先进入 f5-steganography 所在目录，</p>
 <figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java Extract xxx.jpg <span class="literal">-p</span> [密码]  <span class="comment">#解密</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="exiftool"><a href="#exiftool" class="headerlink" title="exiftool"></a>exiftool</h3><p>查看图片的exif信息</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exiftool xxx.jpg</span><br></pre></td></tr></tbody></table></figure>
 
+<h3 id="exiftool"><a href="#exiftool" class="headerlink" title="exiftool"></a>exiftool</h3><p>查看或插入图片的 exif 信息</p>
+<ul>
+<li><p>查看 exif 信息</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exiftool xxx.jpg</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>插入 exif 信息</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exiftool -copyright=<span class="string">"Hello,"</span> -comment=<span class="string">" World!"</span> xxx.jpg</span><br><span class="line"><span class="comment">#分别写入图片的copyright和comment</span></span><br></pre></td></tr></tbody></table></figure>
+
+</li>
+</ul>
 <h3 id="gnuplot"><a href="#gnuplot" class="headerlink" title="gnuplot"></a>gnuplot</h3><p>一个命令行的交互式绘图工具。我主要用来把存有像素点坐标的 txt 文件转化为图像</p>
 <p>格式要求：每个坐标占一行，x 轴的值与 y 轴的值中间由空格分开</p>
 <figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gnuplot  <span class="comment"># 启动gnuplot</span></span><br><span class="line">plot pixel.txt  <span class="comment"># 生成图像</span></span><br></pre></td></tr></tbody></table></figure>
@@ -195,7 +233,7 @@
 <figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot sin(x)  <span class="comment"># 画一个正弦图像</span></span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="gaps-jpg"><a href="#gaps-jpg" class="headerlink" title="gaps (jpg)"></a>gaps (jpg)</h3><p>拼图软件。如何安装与使用详见 <a href="https://www.zhuanzhi.ai/document/282c8a2293a31361d4c15b4451b5406a " target="_blank">gaps 教程</a></p>
-<ol>
+<ul>
 <li><p>构建拼图</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create_puzzle images/xxx.jpg --size=[每个拼图块的边长像素数] --destination=puzzle.jpg</span><br></pre></td></tr></tbody></table></figure>
 </li>
@@ -203,7 +241,7 @@
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gaps --image=puzzle.jpg --generations=[遗传代数] --population=[拼图个数] --size=[每个拼图块的边长像素数] --save</span><br><span class="line"> <span class="comment">#不写size参数也可以</span></span><br></pre></td></tr></tbody></table></figure>
 
 </li>
-</ol>
+</ul>
 <h3 id="QR-Research"><a href="#QR-Research" class="headerlink" title="QR Research"></a>QR Research</h3><p>扫二维码、生成二维码的工具。可以设置纠错等级和掩码</p>
 <h3 id="隐形水印工具"><a href="#隐形水印工具" class="headerlink" title="隐形水印工具"></a>隐形水印工具</h3><p>加上或提取盲水印</p>
 <h2 id="压缩包工具"><a href="#压缩包工具" class="headerlink" title="压缩包工具"></a>压缩包工具</h2><h3 id="Advanced-Archive-Password-Recovery"><a href="#Advanced-Archive-Password-Recovery" class="headerlink" title="Advanced Archive Password Recovery"></a>Advanced Archive Password Recovery</h3><p>破解 rar、zip 压缩包的密码</p>
@@ -272,7 +310,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#检测-amp-分离工具"><span class="toc-text">检测&分离工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#binwalk"><span class="toc-text">binwalk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#foremost"><span class="toc-text">foremost</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片工具"><span class="toc-text">图片工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stegsolve"><span class="toc-text">stegsolve</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zsteg-png-amp-bmp"><span class="toc-text">zsteg (png&bmp)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pngcheck-png"><span class="toc-text">pngcheck (png)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tweakPNG-png"><span class="toc-text">tweakPNG (png)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#steghide-jpg-amp-bmp"><span class="toc-text">steghide (jpg&bmp) </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stegdetect-jpg"><span class="toc-text">stegdetect (jpg)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#outguess-jpg"><span class="toc-text">outguess (jpg)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#f5-steganography-jpg-amp-gif"><span class="toc-text">f5-steganography (jpg&gif)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#exiftool"><span class="toc-text">exiftool</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gnuplot"><span class="toc-text">gnuplot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gaps-jpg"><span class="toc-text">gaps (jpg)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#QR-Research"><span class="toc-text">QR Research</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐形水印工具"><span class="toc-text">隐形水印工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#压缩包工具"><span class="toc-text">压缩包工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Advanced-Archive-Password-Recovery"><span class="toc-text">Advanced Archive Password Recovery</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ZipCenOp-zip"><span class="toc-text">ZipCenOp (zip)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#音频工具"><span class="toc-text">音频工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Audacity"><span class="toc-text">Audacity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MP3Stego-mp3"><span class="toc-text">MP3Stego (mp3)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#steghide"><span class="toc-text">steghide</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#uncompyle6"><span class="toc-text">uncompyle6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#010-Editor"><span class="toc-text">010 Editor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WinHex"><span class="toc-text">WinHex</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WinRAR"><span class="toc-text">WinRAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Silent-Eye"><span class="toc-text">Silent Eye</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NTFS-Streams-Editor"><span class="toc-text">NTFS Streams Editor</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#检测-amp-分离工具"><span class="toc-text">检测&分离工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#binwalk"><span class="toc-text">binwalk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#foremost"><span class="toc-text">foremost</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片工具"><span class="toc-text">图片工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stegsolve"><span class="toc-text">stegsolve</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ImageMagick"><span class="toc-text">ImageMagick</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zsteg-png-amp-bmp"><span class="toc-text">zsteg (png&bmp)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pngcheck-png"><span class="toc-text">pngcheck (png)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tweakPNG-png"><span class="toc-text">tweakPNG (png)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#steghide-jpg-amp-bmp"><span class="toc-text">steghide (jpg&bmp) </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stegdetect-jpg"><span class="toc-text">stegdetect (jpg)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#outguess-jpg"><span class="toc-text">outguess (jpg)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#f5-steganography-jpg-amp-gif"><span class="toc-text">f5-steganography (jpg&gif)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#exiftool"><span class="toc-text">exiftool</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gnuplot"><span class="toc-text">gnuplot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gaps-jpg"><span class="toc-text">gaps (jpg)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#QR-Research"><span class="toc-text">QR Research</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐形水印工具"><span class="toc-text">隐形水印工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#压缩包工具"><span class="toc-text">压缩包工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Advanced-Archive-Password-Recovery"><span class="toc-text">Advanced Archive Password Recovery</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ZipCenOp-zip"><span class="toc-text">ZipCenOp (zip)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#音频工具"><span class="toc-text">音频工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Audacity"><span class="toc-text">Audacity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MP3Stego-mp3"><span class="toc-text">MP3Stego (mp3)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#steghide"><span class="toc-text">steghide</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#uncompyle6"><span class="toc-text">uncompyle6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#010-Editor"><span class="toc-text">010 Editor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WinHex"><span class="toc-text">WinHex</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WinRAR"><span class="toc-text">WinRAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Silent-Eye"><span class="toc-text">Silent Eye</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NTFS-Streams-Editor"><span class="toc-text">NTFS Streams Editor</span></a></li></ol></li></ol>
     </div>
 </div>
 
