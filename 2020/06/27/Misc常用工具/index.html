@@ -162,7 +162,7 @@
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">convert xxx.jpg xxx.png  <span class="comment">#把jpg文件转成png文件</span></span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>改变图像大小、旋转图像</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">convert -resize 1024x768 xxx.jpg yyy.jpg  <span class="comment">#将图像分辨率改为1024*768</span></span><br><span class="line">convert -sample 50%x50% xxx.jpg yyy.jpg  <span class="comment">#将图像的缩减为原来的 50%*50%</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">convert -resize 1024x768 xxx.jpg yyy.jpg  <span class="comment">#将图像分辨率改为1024*768</span></span><br><span class="line">convert -sample 50%x50% xxx.jpg yyy.jpg  <span class="comment">#将图像的缩减为原来的50%*50%</span></span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>在图像里面添加文字</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">convert -fill black -pointsize 60 -font helvetica -draw <span class="string">"text 10,80 'Hello, World!'"</span> xxx.jpg yyy.jpg</span><br><span class="line"><span class="comment">#在图片的(10,80)位置用60磅的黑色Helvetica字体写上Hello, World!</span></span><br></pre></td></tr></tbody></table></figure>
@@ -227,10 +227,10 @@
 </ul>
 <h3 id="gnuplot"><a href="#gnuplot" class="headerlink" title="gnuplot"></a>gnuplot</h3><p>一个命令行的交互式绘图工具。我主要用来把存有像素点坐标的 txt 文件转化为图像</p>
 <p>格式要求：每个坐标占一行，x 轴的值与 y 轴的值中间由空格分开</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gnuplot  <span class="comment"># 启动gnuplot</span></span><br><span class="line">plot pixel.txt  <span class="comment"># 生成图像</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gnuplot  <span class="comment">#启动gnuplot</span></span><br><span class="line">plot pixel.txt  <span class="comment">#生成图像</span></span><br></pre></td></tr></tbody></table></figure>
 
 <p>也可以用来画函数图像</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot sin(x)  <span class="comment"># 画一个正弦图像</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot sin(x)  <span class="comment">#画一个正弦图像</span></span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="gaps-jpg"><a href="#gaps-jpg" class="headerlink" title="gaps (jpg)"></a>gaps (jpg)</h3><p>拼图软件。如何安装与使用详见 <a href="https://www.zhuanzhi.ai/document/282c8a2293a31361d4c15b4451b5406a " target="_blank">gaps 教程</a></p>
 <ul>
