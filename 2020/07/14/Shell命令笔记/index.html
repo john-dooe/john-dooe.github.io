@@ -266,55 +266,55 @@
 </ul>
 <h2 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h2><p>平常不用，写一些偶尔用的上的吧</p>
 <h3 id="文件-1"><a href="#文件-1" class="headerlink" title="文件"></a>文件</h3><h4 id="del"><a href="#del" class="headerlink" title="del"></a>del</h4><p>删除文件或目录</p>
-<figure class="highlight cmd"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">del</span> [文件或目录名]</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del [文件或目录名]</span><br></pre></td></tr></tbody></table></figure>
 
 <h4 id="copy"><a href="#copy" class="headerlink" title="copy"></a>copy</h4><p>把多个文件拼接成一个文件</p>
-<figure class="highlight cmd"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">copy</span> /b [文件<span class="number">1</span>] [文件<span class="number">2</span>] [文件<span class="number">3</span>]  #把文件<span class="number">1</span>和文件<span class="number">2</span>拼接在一起，命名为文件<span class="number">3</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copy /b [文件<span class="number">1</span>] [文件<span class="number">2</span>] [文件<span class="number">3</span>]  <span class="comment">#把文件1和文件2拼接在一起，命名为文件3</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><figure class="highlight cmd"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh winsock reset  #重置winsock目录，Ubuntu连不上的时候用</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh winsock reset  <span class="comment">#重置winsock目录，Ubuntu连不上的时候用</span></span><br></pre></td></tr></tbody></table></figure>
 
 <h2 id="第三方包管理器"><a href="#第三方包管理器" class="headerlink" title="第三方包管理器"></a>第三方包管理器</h2><h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><h4 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h4><ul>
 <li><p>安装 & 卸载</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install [包名称]  #安装</span><br><span class="line">pip install [包名称] -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com  #暂时换成豆瓣源安装</span><br><span class="line">pip uninstall [包名称]  #卸载</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install [包名称]  <span class="comment">#安装</span></span><br><span class="line">pip install [包名称] -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com  <span class="comment">#暂时换成豆瓣源安装</span></span><br><span class="line">pip uninstall [包名称]  <span class="comment">#卸载</span></span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>搜索</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip search [包名称]</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip search [包名称]</span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>更新</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade [包名称]  #更新某个包</span><br><span class="line">pip install -U pip  #更新pip</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade [包名称]  <span class="comment">#更新某个包</span></span><br><span class="line">pip install -U pip  <span class="comment">#更新pip</span></span><br></pre></td></tr></tbody></table></figure>
 
 </li>
 </ul>
 <h4 id="conda"><a href="#conda" class="headerlink" title="conda"></a>conda</h4><ul>
 <li><p>安装 & 卸载</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install [包名称]  #安装</span><br><span class="line">conda remove [包名称]  #卸载</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install [包名称]  <span class="comment">#安装</span></span><br><span class="line">conda remove [包名称]  <span class="comment">#卸载</span></span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>搜索</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda search [包名称]</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda search [包名称]</span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>更新</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda update [包名称]  #更新某个包</span><br><span class="line">conda update conda  #更新conda</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda update [包名称]  <span class="comment">#更新某个包</span></span><br><span class="line">conda update conda  <span class="comment">#更新conda</span></span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>管理 Python 环境</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">conda create --name [环境名] python=3.5  #创建Python版本为3.5的环境</span><br><span class="line">activate [环境名]  #Windows激活环境</span><br><span class="line">source activate [环境名]  #Linux激活环境</span><br><span class="line">deactivate [环境名]  #Windows返回主环境</span><br><span class="line">source deactivate [环境名]  #Linux返回主环境</span><br><span class="line">conda remove --name [环境名] --all  #删除环境</span><br><span class="line">conda info -e  #查看系统中所有环境</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">conda create -<span class="literal">-name</span> [环境名] python=<span class="number">3.5</span>  <span class="comment">#创建Python版本为3.5的环境</span></span><br><span class="line">activate [环境名]  <span class="comment">#Windows激活环境</span></span><br><span class="line">source activate [环境名]  <span class="comment">#Linux激活环境</span></span><br><span class="line">deactivate [环境名]  <span class="comment">#Windows返回主环境</span></span><br><span class="line">source deactivate [环境名]  <span class="comment">#Linux返回主环境</span></span><br><span class="line">conda remove -<span class="literal">-name</span> [环境名] -<span class="literal">-all</span>  <span class="comment">#删除环境</span></span><br><span class="line">conda info <span class="literal">-e</span>  <span class="comment">#查看系统中所有环境</span></span><br></pre></td></tr></tbody></table></figure>
 
 </li>
 </ul>
 <h3 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h3><h4 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h4><ul>
 <li><p>安装 & 卸载</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install [包名称]  #本地安装</span><br><span class="line">npm install [包名称] -s  #本地安装并把模块的版本信息保存到生产环境依赖</span><br><span class="line">npm install [包名称] -d  #本地安装并把模块的版本信息保存到开发环境依赖</span><br><span class="line">npm install [包名称] -g  #全局安装</span><br><span class="line">npm uninstall [包名称]  #卸载当前项目中安装的某个包</span><br><span class="line">npm uninstall [包名称] -g  #卸载某个全局安装的包</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install [包名称]  <span class="comment">#本地安装</span></span><br><span class="line">npm install [包名称] <span class="literal">-s</span>  <span class="comment">#本地安装并把模块的版本信息保存到生产环境依赖</span></span><br><span class="line">npm install [包名称] <span class="literal">-d</span>  <span class="comment">#本地安装并把模块的版本信息保存到开发环境依赖</span></span><br><span class="line">npm install [包名称] <span class="literal">-g</span>  <span class="comment">#全局安装</span></span><br><span class="line">npm uninstall [包名称]  <span class="comment">#卸载当前项目中安装的某个包</span></span><br><span class="line">npm uninstall [包名称] <span class="literal">-g</span>  <span class="comment">#卸载某个全局安装的包</span></span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>查看某个全局安装的包的位置</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm [包名称] -g</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm [包名称] <span class="literal">-g</span></span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>更新</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm update  #更新当前项目中安装的所有包</span><br><span class="line">npm update [包名称]  #更新当前项目中安装的某个包</span><br><span class="line">npm update [包名称] -g  #更新某个全局安装的包</span><br><span class="line">npm install npm -g  #更新npm</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm update  <span class="comment">#更新当前项目中安装的所有包</span></span><br><span class="line">npm update [包名称]  <span class="comment">#更新当前项目中安装的某个包</span></span><br><span class="line">npm update [包名称] <span class="literal">-g</span>  <span class="comment">#更新某个全局安装的包</span></span><br><span class="line">npm install npm <span class="literal">-g</span>  <span class="comment">#更新npm</span></span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>初始化项目</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init  #在当前目录生成一个package.json文件</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init  <span class="comment">#在当前目录生成一个package.json文件</span></span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>运行脚本</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run [脚本名]  #常见的比如vue-cli使用npm run dev和npm run build</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run [脚本名]  <span class="comment">#常见的比如vue-cli使用npm run dev和npm run build</span></span><br></pre></td></tr></tbody></table></figure>
 </li>
 </ul>
 
