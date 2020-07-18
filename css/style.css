@@ -65,8 +65,16 @@ img {
     padding-bottom: 20px;
 }
 
-.post-site-header:after,
-.post-site-header:before {
+.post-site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.post-site-header:before,
+.post-site-header:after {
     display: none;
 }
 
