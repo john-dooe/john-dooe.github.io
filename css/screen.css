@@ -671,7 +671,6 @@ h6 {
 .page-template .site-main,
 .post-template .site-main {
 	padding-bottom: 4vw;
-	margin-top: 64px;
 
 	background: var(--post-bg);
 }
