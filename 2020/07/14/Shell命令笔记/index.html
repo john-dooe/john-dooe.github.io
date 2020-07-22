@@ -145,73 +145,37 @@
             
             <div class="post-full-content">
                 <article id="photoswipe" class="markdown-body">
-                    <h2 id="Bash"><a href="#Bash" class="headerlink" title="Bash"></a>Bash</h2><h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><h4 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h4><p>列出当前目录下的内容</p>
+                    <h2 id="Bash"><a href="#Bash" class="headerlink" title="Bash"></a>Bash</h2><h3 id="文件-amp-目录"><a href="#文件-amp-目录" class="headerlink" title="文件 & 目录"></a>文件 & 目录</h3><h4 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h4><p>列出当前目录下的内容</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ls -l  <span class="comment">#列出文件的详细信息</span></span><br><span class="line">ls -a  <span class="comment">#列出所有文件及目录（以“.”开头的文件及目录通常被隐藏）</span></span><br><span class="line">ls -A  <span class="comment">#同ls -a，但去掉了“.”与“..”这两个</span></span><br><span class="line">ls -F  <span class="comment">#在目录名称前加“/”，在可执行文件前加“*”</span></span><br><span class="line">ls -R  <span class="comment">#若目录下有文件，也列出来</span></span><br></pre></td></tr></tbody></table></figure>
 
 <h4 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h4><p>以树状图列出当前目录结构，基本相当于 ls -R，但更加直观</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree  <span class="comment">#直接使用即可</span></span><br></pre></td></tr></tbody></table></figure>
 
+<h4 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h4><p>切换当前目录</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> [路径]  <span class="comment">#可以是相对路径，也可以是绝对路径</span></span><br><span class="line"><span class="built_in">cd</span> ..  <span class="comment">#切换到上级目录</span></span><br><span class="line"><span class="built_in">cd</span> ../..  <span class="comment">#切换到上上级目录</span></span><br><span class="line"><span class="built_in">cd</span> ~[用户名]  <span class="comment">#切换到某个用户的home目录</span></span><br><span class="line"><span class="built_in">cd</span> -  <span class="comment">#切换到上一次所处的目录</span></span><br><span class="line"><span class="built_in">cd</span> /  <span class="comment">#切换到根目录</span></span><br></pre></td></tr></tbody></table></figure>
+
 <h4 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h4><p>显示当前目录</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">>> <span class="built_in">pwd</span></span><br><span class="line">/home/john_doe</span><br></pre></td></tr></tbody></table></figure>
 
-<h4 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h4><p>切换当前目录</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> [路径]  <span class="comment">#可以是相对路径，也可以是绝对路径</span></span><br><span class="line"><span class="built_in">cd</span> ..  <span class="comment">#切换到上个目录</span></span><br><span class="line"><span class="built_in">cd</span> ../..  <span class="comment">#切换到上上个目录</span></span><br><span class="line"><span class="built_in">cd</span> ~  <span class="comment">#切换到home目录</span></span><br><span class="line"><span class="built_in">cd</span> /  <span class="comment">#切换到根目录</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h4><p>在当前目录下创建一个新文件夹</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir [文件夹名称]</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h4><p>新建空白文件、设置文件的时间</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">touch [文件名]  <span class="comment">#在当前目录下新建一个空白文件</span></span><br><span class="line">touch [文件名] -a <span class="string">"2019-01-01 9:30"</span>  <span class="comment">#设置文件的读取时间（atime）</span></span><br><span class="line">touch [文件名] -m <span class="string">"2019-01-01 9:30"</span>  <span class="comment">#设置文件的修改时间（mtime）</span></span><br><span class="line">touch [文件名] -d <span class="string">"2019-01-01 9:30"</span>  <span class="comment">#同时设置的读取时间和修改时间</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm -f [文件或目录名]  <span class="comment">#不用确认，直接删除</span></span><br><span class="line">rm -r [文件或目录名]  <span class="comment">#将目录与里面的内容全部删除（删除文件夹必须用rm -r）</span></span><br><span class="line">rm -r *  <span class="comment">#删除当前目录下所有东西</span></span><br><span class="line">rm -rf /*  <span class="comment">#垃圾清理代码，用完系统运行飞快</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="file"><a href="#file" class="headerlink" title="file"></a>file</h4><p>通过文件内容推断文件类型</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file [文件名]</span><br></pre></td></tr></tbody></table></figure>
 
 <h4 id="find"><a href="#find" class="headerlink" title="find"></a>find</h4><p>寻找文件或目录</p>
 <p>用 “.” 表示当前目录，用 “/” 表示根目录</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find [路径] -name <span class="string">"flag*"</span>  <span class="comment">#寻找以“flag”开头的文件或目录，区分大小写</span></span><br><span class="line">find [路径] -iname <span class="string">"*.txt"</span>  <span class="comment">#寻找以“.txt”结尾的文件或目录，不区分大小写</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h4 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h4><p>在当前目录下创建一个新文件夹</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir [文件夹名称]</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="dd"><a href="#dd" class="headerlink" title="dd"></a>dd</h4><p>可以用来备份、分离文件</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dd <span class="keyword">if</span>=[输入文件] of=[输出文件] count=[要复制块的个数] bs=[每个块的大小]</span><br><span class="line">dd <span class="keyword">if</span>=/dev/hdb of=/dev/hdd  <span class="comment">#将本地的/dev/hdb整盘备份到/dev/hdd</span></span><br><span class="line">dd <span class="keyword">if</span>=xxx.jpg of=yyy.jpg skip=140147 bs=1</span><br><span class="line"><span class="comment">#设置每个块为1字节，从第140147个块开始复制并保存为yyy.jpg</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><h4 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm -f [文件或目录名]  <span class="comment">#不用确认，直接删除</span></span><br><span class="line">rm -r [文件或目录名]  <span class="comment">#将目录与里面的内容全部删除（删除文件夹必须用rm -r）</span></span><br><span class="line">rm -r *  <span class="comment">#删除当前目录下所有东西</span></span><br><span class="line">rm -rf /*  <span class="comment">#垃圾清理代码，用完系统运行飞快</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h4><p>连接文件并打印到标准输出设备上</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat [文件名]  <span class="comment">#直接把文件内容打印出来</span></span><br><span class="line">cat [文件1] [文件2] > [文件3]  <span class="comment">#把文件1和文件2拼接在一起，命名为文件3</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="file"><a href="#file" class="headerlink" title="file"></a>file</h4><p>通过文件内容推断文件类型</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file [文件名]</span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h4><p>查找文件里符合条件的字符串</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grep flag [文件名]  <span class="comment">#在文件中搜索flag字符串，区分大小写</span></span><br><span class="line">grep -i flag *.txt  <span class="comment">#在结尾为.txt的文件中搜索flag字符串，不区分大小写</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="hexdump"><a href="#hexdump" class="headerlink" title="hexdump"></a>hexdump</h4><p>最简单的看文件 16 进制的方法</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexdump [文件名]  <span class="comment">#输出16进制</span></span><br><span class="line">hexdump -C [文件名]  <span class="comment">#输出16进制与ASCII码</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="strings"><a href="#strings" class="headerlink" title="strings"></a>strings</h4><p>打印出文件中所有的 ASCII 字符</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strings [文件名]</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><h4 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h4><ul>
-<li><p>编码</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">base64 [文件名]  <span class="comment">#将文件中内容编码</span></span><br><span class="line">base64 文件1 > 文件2  <span class="comment">#将文件1中内容编码，保存进文件2</span></span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>解码</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">base64 -d [文件名]  <span class="comment">#将文件中内容解码</span></span><br><span class="line">base64 -d 文件1 > 文件2  <span class="comment">#将文件1中内容解码，保存进文件2</span></span><br></pre></td></tr></tbody></table></figure>
-
-</li>
-</ul>
-<h4 id="base58"><a href="#base58" class="headerlink" title="base58"></a>base58</h4><p>同上</p>
-<h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><h4 id="7z"><a href="#7z" class="headerlink" title="7z"></a>7z</h4><p>可以解压 vmdk 文件</p>
-<ul>
-<li><p>压缩</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">7z a [压缩包名] [被压缩文件名]</span><br><span class="line">7z a [压缩包名] *.txt  <span class="comment">#压缩所有以.txt结尾的文件</span></span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>解压缩</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7z x [压缩包名]</span><br></pre></td></tr></tbody></table></figure>
-
-</li>
-</ul>
-<h4 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h4><p>解压 tar.gz 文件</p>
-<ul>
-<li><p>压缩</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -czvf [压缩包名] [被压缩文件名]</span><br><span class="line">tar -czvf [压缩包名] *.txt  <span class="comment">#压缩所有以.txt结尾的文件</span></span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>解压缩</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf [压缩包名]</span><br></pre></td></tr></tbody></table></figure>
-
-</li>
-</ul>
-<h3 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h3><h4 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h4><p>vim 是从 vi 发展出来的一个文本编辑器</p>
+<h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><h4 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h4><p>vim 是一个从 vi 发展出来的文本编辑器</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim [文件名]  <span class="comment">#用vim打开文件</span></span><br></pre></td></tr></tbody></table></figure>
 
 <p>一开始会进入到命令模式，当进入其他模式时按下<kbd>Esc</kbd>可以返回命令模式</p>
@@ -245,6 +209,58 @@
 <li><p><kbd>Ctrl</kbd>+<kbd>X</kbd>：退出</p>
 </li>
 </ul>
+<h4 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h4><p>将文件打印到标准输出设备上</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat [文件名]  <span class="comment">#直接把文件内容打印出来</span></span><br><span class="line">cat -n [文件名]  <span class="comment">#显示行号</span></span><br><span class="line">cat -b [文件名]  <span class="comment">#除空行外显示行号</span></span><br><span class="line">cat [文件1] [文件2] > [文件3]  <span class="comment">#把文件1和文件2拼接在一起，命名为文件3</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="head"><a href="#head" class="headerlink" title="head"></a>head</h4><p>打印文本文件的前 n 行</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head [文件名]  <span class="comment">#默认打印文件的前10行</span></span><br><span class="line">head -n [行数] [文件名]  <span class="comment">#设置打印行数（当输入负数时表示打印除去最后n行的所有文本）</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h4><p>打印文本文件的后 n 行，用法与 head 相同</p>
+<h4 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h4><p>在文本中搜索关键词</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grep flag [文件名]  <span class="comment">#在文件中搜索flag字符串，区分大小写</span></span><br><span class="line">grep -i flag *.txt  <span class="comment">#在结尾为.txt的文件中搜索flag字符串，不区分大小写</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="tr"><a href="#tr" class="headerlink" title="tr"></a>tr</h4><p>替换文本文件中的字符</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat xxx.txt | tr a b  <span class="comment">#将xxx.txt中的所有的“a”替换成“b”</span></span><br><span class="line">cat xxx.txt | tr [a-z] [A-Z]  <span class="comment">#将xxx.txt中的所有小写字母替换成大写</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h4><p>比较多个文件的差异</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">diff xxx.txt yyy.txt  <span class="comment">#比较文件</span></span><br><span class="line">diff -c xxx.txt yyy.txt  <span class="comment">#比较文件，并描述具体的不同</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="hexdump"><a href="#hexdump" class="headerlink" title="hexdump"></a>hexdump</h4><p>最简单的看文件 16 进制的方法</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexdump [文件名]  <span class="comment">#输出16进制</span></span><br><span class="line">hexdump -C [文件名]  <span class="comment">#输出16进制与ASCII码</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="strings"><a href="#strings" class="headerlink" title="strings"></a>strings</h4><p>打印出文件中所有的 ASCII 字符</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strings [文件名]</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><h4 id="7z"><a href="#7z" class="headerlink" title="7z"></a>7z</h4><p>可以解压 vmdk 文件</p>
+<ul>
+<li><p>压缩</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">7z a [压缩包名] [被压缩文件名]</span><br><span class="line">7z a [压缩包名] *.txt  <span class="comment">#压缩所有以.txt结尾的文件</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>解压缩</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7z x [压缩包名]</span><br></pre></td></tr></tbody></table></figure>
+
+</li>
+</ul>
+<h4 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h4><p>解压 tar.gz 文件、tar 文件、tar.bz2 文件</p>
+<ul>
+<li><p>压缩</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -czvf [压缩包名] [被压缩文件名]</span><br><span class="line">tar -czvf [压缩包名] *.txt  <span class="comment">#压缩所有以.txt结尾的文件</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>解压缩</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf [压缩包名]</span><br></pre></td></tr></tbody></table></figure>
+
+</li>
+</ul>
+<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><h4 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h4><ul>
+<li><p>编码</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">base64 [文件名]  <span class="comment">#将文件中内容编码</span></span><br><span class="line">base64 文件1 > 文件2  <span class="comment">#将文件1中内容编码，保存进文件2</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>解码</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">base64 -d [文件名]  <span class="comment">#将文件中内容解码</span></span><br><span class="line">base64 -d 文件1 > 文件2  <span class="comment">#将文件1中内容解码，保存进文件2</span></span><br></pre></td></tr></tbody></table></figure>
+
+</li>
+</ul>
+<h4 id="base58-amp-base32-amp-base16"><a href="#base58-amp-base32-amp-base16" class="headerlink" title="base58 & base32 &base16"></a>base58 & base32 &base16</h4><p>同上</p>
 <h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><h4 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h4><p>用来检测主机</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping -c [完成次数] [域名或IP地址]</span><br></pre></td></tr></tbody></table></figure>
 
@@ -264,8 +280,32 @@
 
 </li>
 </ul>
+<h3 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h3><ul>
+<li>$：表示其为变量</li>
+<li>*：通配符，代表零个或多个字符</li>
+<li>?：通配符，代表一个字符</li>
+<li>&：写在命令的后面，代表设置此进程为后台进程</li>
+<li>|：连接两个命令，代表把前一个命令的输出当作后一个命令的输入</li>
+<li>;：连接两个命令，使命令按从左到右的顺序执行，无论成功与否</li>
+<li>&&：连接两个命令，当前一个命令返回真时，才执行后一个命令</li>
+<li>||：连接两个命令，当前一个命令返回假时，才执行后一个命令</li>
+<li>>：把标准输出写入符号后面的文件，并清空原有数据</li>
+<li>>>：把标准输出写入符号后面的文件，追加到原有内容的后面</li>
+<li><：把符号后面的文件当作命令的输入</li>
+<li>‘’：转义其中的变量属性为纯字符串</li>
+<li>“”：保留其中的变量属性，不进行转义</li>
+</ul>
+<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><ul>
+<li>HOME：用户的 home 目录</li>
+<li>SHELL：当前使用的 Shell 解释器名称</li>
+<li>LANG：系统语言、语系名称</li>
+<li>PATH：可执行文件的搜索路径</li>
+<li>EDITOR：默认的文本编辑器</li>
+<li>RANDOM：生成一个随机数</li>
+</ul>
+<p>使用 export 命令可以把一般变量转换为全局变量</p>
 <h2 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h2><p>平常不用，写一些偶尔用的上的吧</p>
-<h3 id="文件-1"><a href="#文件-1" class="headerlink" title="文件"></a>文件</h3><h4 id="del"><a href="#del" class="headerlink" title="del"></a>del</h4><p>删除文件或目录</p>
+<h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><h4 id="del"><a href="#del" class="headerlink" title="del"></a>del</h4><p>删除文件或目录</p>
 <figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del [文件或目录名]</span><br></pre></td></tr></tbody></table></figure>
 
 <h4 id="copy"><a href="#copy" class="headerlink" title="copy"></a>copy</h4><p>把多个文件拼接成一个文件</p>
@@ -366,7 +406,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Bash"><span class="toc-text">Bash</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#目录"><span class="toc-text">目录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ls"><span class="toc-text">ls</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tree"><span class="toc-text">tree</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pwd"><span class="toc-text">pwd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cd"><span class="toc-text">cd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#find"><span class="toc-text">find</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mkdir"><span class="toc-text">mkdir</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件"><span class="toc-text">文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#rm"><span class="toc-text">rm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cat"><span class="toc-text">cat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#file"><span class="toc-text">file</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#grep"><span class="toc-text">grep</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hexdump"><span class="toc-text">hexdump</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#strings"><span class="toc-text">strings</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编码"><span class="toc-text">编码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#base64"><span class="toc-text">base64</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#base58"><span class="toc-text">base58</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#压缩"><span class="toc-text">压缩</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7z"><span class="toc-text">7z</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tar"><span class="toc-text">tar</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本处理"><span class="toc-text">文本处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vim"><span class="toc-text">vim</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nano"><span class="toc-text">nano</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络"><span class="toc-text">网络</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ping"><span class="toc-text">ping</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包管理器"><span class="toc-text">包管理器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#apt"><span class="toc-text">apt</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CMD"><span class="toc-text">CMD</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件-1"><span class="toc-text">文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#del"><span class="toc-text">del</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#copy"><span class="toc-text">copy</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三方包管理器"><span class="toc-text">第三方包管理器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Python"><span class="toc-text">Python</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pip"><span class="toc-text">pip</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#conda"><span class="toc-text">conda</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Javascript"><span class="toc-text">Javascript</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#npm"><span class="toc-text">npm</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Bash"><span class="toc-text">Bash</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件-amp-目录"><span class="toc-text">文件 & 目录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ls"><span class="toc-text">ls</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tree"><span class="toc-text">tree</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cd"><span class="toc-text">cd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pwd"><span class="toc-text">pwd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mkdir"><span class="toc-text">mkdir</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#touch"><span class="toc-text">touch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rm"><span class="toc-text">rm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#file"><span class="toc-text">file</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#find"><span class="toc-text">find</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dd"><span class="toc-text">dd</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本"><span class="toc-text">文本</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vim"><span class="toc-text">vim</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nano"><span class="toc-text">nano</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cat"><span class="toc-text">cat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#head"><span class="toc-text">head</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tail"><span class="toc-text">tail</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#grep"><span class="toc-text">grep</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tr"><span class="toc-text">tr</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#diff"><span class="toc-text">diff</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hexdump"><span class="toc-text">hexdump</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#strings"><span class="toc-text">strings</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#压缩"><span class="toc-text">压缩</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7z"><span class="toc-text">7z</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tar"><span class="toc-text">tar</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编码"><span class="toc-text">编码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#base64"><span class="toc-text">base64</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#base58-amp-base32-amp-base16"><span class="toc-text">base58 & base32 &base16</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络"><span class="toc-text">网络</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ping"><span class="toc-text">ping</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包管理器"><span class="toc-text">包管理器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#apt"><span class="toc-text">apt</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊符号"><span class="toc-text">特殊符号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#环境变量"><span class="toc-text">环境变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CMD"><span class="toc-text">CMD</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件"><span class="toc-text">文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#del"><span class="toc-text">del</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#copy"><span class="toc-text">copy</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三方包管理器"><span class="toc-text">第三方包管理器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Python"><span class="toc-text">Python</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pip"><span class="toc-text">pip</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#conda"><span class="toc-text">conda</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Javascript"><span class="toc-text">Javascript</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#npm"><span class="toc-text">npm</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
 
